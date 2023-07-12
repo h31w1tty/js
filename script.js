@@ -13,7 +13,8 @@ function avaliar() {
                 resultado = "operação vazia";
             break;
             case "+": 
-                resultado = input1 + input2;
+                
+                resultado = parseFloat(input1) + parseFloat(input2);
             break;
             case "-":
                 resultado = input1 - input2;
