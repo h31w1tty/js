@@ -3,7 +3,10 @@ body{
 }
 input{
     text-align: center;
-    width:100px;
+    width:80px;
+}
+#saida{
+    width: 100px;
 }
 #opera{
     width: 60px;
