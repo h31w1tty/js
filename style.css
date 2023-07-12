@@ -11,3 +11,12 @@ input{
 #opera{
     width: 60px;
 }
+ul{
+    text-align: left;
+}
+h4{
+    text-align: left;
+}
+li{
+    text-decoration: underline;
+}
