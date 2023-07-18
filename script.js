@@ -65,21 +65,64 @@ function avaliar() {
     console.log("num 2: " + input2);
     document.getElementById("saida").value = resultado;
 }
+
+//mudança pra italico e vise versa
+function italico(){
+    var textoBox = document.getElementById("userText");
+    if(textoBox.style.fontStyle != 'italic'){
+        textoBox.style.fontStyle = 'italic'
+    }
+    else{textoBox.style.fontStyle = 'normal'}
+}
+
+//mudança de normal pra negrito, e vise versa
 function negrito(){
     var textoBox = document.getElementById("userText");
-    if(textoBox.style.fontWeight == 'bolder');
-    //continue
+    if(textoBox.style.fontWeight != 'bolder'){
+        textoBox.style.fontWeight = 'bolder';
+    }
+    else{textoBox.style.fontWeight = 'normal'}
+}
+
+//limpar
+function limpar(){
+    var textoBox = document.getElementById("userText");
+    textoBox.value = 'Seu Texto';
+    textoBox.style.fontWeight = 'normal';
+    textoBox.style.fontStyle = 'normal';
+    textoBox.style.backgroundColor = 'white';
+    textoBox.style.color = 'black';
 }
 
 //mudança de cor do fundo
-var fundoCor = document.getElementById("bgUserText");
-var coresPadrao = ['#5b88ff', '#5bffd7', '#55a13a', '#c2c93c', '#b9801c', '#d91616', '#c34b8f', '#8038af', '#502fbb'];
-var contadorCor = 3;
+var checkFundo = document.getElementById("checkBg");
+var checkTxt = document.getElementById("checkTxt");
+var fundoCor = document.getElementById("userText");
+var corTexto = ['green', 'red', 'blue', 'yellow', 'black', 'white'];
+var contadorCorTxt = 4;
+var coresPadrao = ['#5b88ff', '#5bffd7', '#55a13a', '#c2c93c', '#b9801c', '#d91616', '#c34b8f', '#8038af', '#502fbb', 'black', 'white'];
+var contadorCor = 10;
 function up(){
-    if(contadorCor < 8){contadorCor++}
-    fundoCor.style.backgroundColor = coresPadrao[contadorCor];
+    if(checkFundo.checked == true){
+        if(contadorCor < 10){contadorCor++}
+        else if(contadorCor == 10){contadorCor = 0}
+        fundoCor.style.backgroundColor = coresPadrao[contadorCor];
+    }
+    else if(checkTxt.checked == true){
+        if(contadorCorTxt < 5){contadorCorTxt++}
+        else if(contadorCorTxt == 5){contadorCorTxt = 0}
+        fundoCor.style.color = corTexto[contadorCorTxt]
+    }
 }
 function down(){
-    if(contadorCor > 0){contadorCor--}
-    fundoCor.style.backgroundColor = coresPadrao[contadorCor];
+    if(checkFundo.checked == true){
+        if(contadorCor > 0){contadorCor--}
+        else if(contadorCor == 0){contadorCor = 10}
+        fundoCor.style.backgroundColor = coresPadrao[contadorCor];
+    }
+    else if(checkTxt.checked == true){
+        if(contadorCorTxt > 0){contadorCorTxt--}
+        else if(contadorCorTxt == 0){contadorCorTxt = 5}
+        fundoCor.style.color = corTexto[contadorCorTxt]
+    }
 }
