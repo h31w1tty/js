@@ -20,3 +20,13 @@ h4{
 li{
     text-decoration: underline;
 }
+#bgUserText{
+    background-color: black;
+    width: fit-content;
+    margin-inline: auto;
+    border: 3px solid black;
+    padding: 10px 30px;
+}
+button{
+    margin: 10px;
+}
