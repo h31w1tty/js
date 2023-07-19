@@ -9,13 +9,15 @@
 <body>
     <h1>Testando seus valores</h1>
     <input type="text" placeholder="valor 1" id="valor1">
-    <input type="text" id="opera">
+    <input type="text" placeholder="+" id="opera">
     <input type="text" placeholder="valor 2" id="valor2">
     <br>operação<br>
     <h3>Resultado:</h3>
-    <button onclick="avaliar()">Avaliar</button><input type="text" id="saida">
+    <p id="erro">erro</p>
+    <button class="avaliar" onclick="avaliar()">Avaliar</button>
+    <input type="text" id="saida" readonly>
     <br><br><br>
-    <h4>Lista de operações:</h4>
+    <h4>Exemplos de operações:</h4>
     <ul>
         <li>" + " soma</li>
         <li>" - " subtração</li>

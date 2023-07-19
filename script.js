@@ -4,48 +4,60 @@ function avaliar() {
     var operavlr = document.getElementById("opera").value;
     var input1 = document.getElementById("valor1").value;
     var input2 = document.getElementById("valor2").value;
+    var msgErro = document.getElementById("erro");
+    msgErro.style.display = 'none'
 
-    if(isNaN(input1) || isNaN(input2)){resultado = "valor inválido"}
-    else if(input1 == "" || input2 == "") {resultado ="valor vazio"}
+    if(isNaN(input1) || isNaN(input2)){
+        resultado = "**erro01**"
+        msgErro.style.display = 'grid'
+        msgErro.textContent = 'Use apenas numeros nos valores!'
+    }
+    else if(input1 == "" || input2 == "") {
+        resultado ="**erro02**"
+        msgErro.style.display = 'grid'
+        msgErro.textContent = 'Defina dois valores!'
+
+    }
     else{
         switch (operavlr){
-            case "":
-                resultado = "operação vazia";
-            break;
-            case "+": 
-                
+            case "+", "": 
+                operavlr = "somado a";
                 resultado = parseFloat(input1) + parseFloat(input2);
             break;
             case "-":
+                operavlr = "subtraido a";
                 resultado = input1 - input2;
             break;
             case "/":
+                operavlr = "dividido por";
                 resultado = input1 / input2;
             break;
-            case "^":
+            case "^", "**":
+                operavlr = "elevado a";
                 resultado = input1 ** input2;
             break;
             case "*":
+                operavlr = "multiplicado por";
                 resultado = input1 * input2;
             break;
             case "?":
+                operavlr = "comparado a";
                 if(input1 < input2){resultado = "menor";}
                 else if(input1 > input2){resultado = "maior";}
-                else{resultado = "igual";}
+                else{resultado = "Igual";}
             break;
             case "<":
+                operavlr = "é menor que";
                 if(input1 < input2){resultado = "Verdadeiro"}
                 else{resultado = "Falso"}
             break;
             case ">":
+                operavlr = "é maior que";
                 if(input1 > input2){resultado = "Verdadeiro"}
                 else{resultado = "Falso"}
             break;
-            case "=":
-                if(input1 == input2){resultado = "Verdadeiro"}
-                else{resultado = "Falso"}
-            break;
-            case "==":
+            case "=", "==":
+                operavlr = "é igual a";
                 if(input1 == input2){resultado = "Verdadeiro"}
                 else{resultado = "Falso"}
             break;
@@ -54,15 +66,13 @@ function avaliar() {
                 else{resultado = "Falso"}
             break;
             default:
-                resultado = "operação inválida"
+                resultado = "**erro03**"
+                msgErro.style.display = 'grid'
+                msgErro.textContent = 'Operação inexistente!'
             break;
         }
     }
-    
-
-    console.log("operação: " + operavlr);
-    console.log("num 1: "+ input1);
-    console.log("num 2: " + input2);
+    console.log(`conta: ${input1} ${operavlr} ${input2} = ${resultado}`)
     document.getElementById("saida").value = resultado;
 }
 
