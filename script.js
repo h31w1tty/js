@@ -136,3 +136,16 @@ function down(){
         fundoCor.style.color = corTexto[contadorCorTxt]
     }
 }
+
+var maiusculo = document.getElementById("maiusculo")
+var minusculo = document.getElementById("minusculo")
+var texto = document.getElementById('userText')
+maiusculo.addEventListener('click', upercase)
+minusculo.addEventListener('click', lowercase)
+
+function upercase(){
+    texto.value = texto.value.toUpperCase()
+}
+function lowercase(){
+    texto.value = texto.value.toLowerCase()
+}
