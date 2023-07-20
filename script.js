@@ -137,6 +137,7 @@ function down(){
     }
 }
 
+//uper and lower case
 var maiusculo = document.getElementById("maiusculo")
 var minusculo = document.getElementById("minusculo")
 var texto = document.getElementById('userText')
@@ -149,3 +150,14 @@ function upercase(){
 function lowercase(){
     texto.value = texto.value.toLowerCase()
 }
+
+//colar area de transferencia
+function colar() {
+    navigator.clipboard.readText()
+      .then(bagui => {
+        texto.value = bagui
+      })
+      .catch(erro => {
+        texto.value = 'erro de permissão'
+      });
+  }
