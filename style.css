@@ -29,6 +29,7 @@ li{
     text-decoration: underline;
 }
 #userText{
+    text-align: center;
     width:150px;
     padding: 6px 0;
 }
