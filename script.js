@@ -56,7 +56,12 @@ function avaliar() {
                 if(input1 > input2){resultado = "Verdadeiro"}
                 else{resultado = "Falso"}
             break;
-            case "=", "==":
+            case "=":
+                operavlr = "é igual a";
+                if(input1 == input2){resultado = "Verdadeiro"}
+                else{resultado = "Falso"}
+            break;
+            case "==":
                 operavlr = "é igual a";
                 if(input1 == input2){resultado = "Verdadeiro"}
                 else{resultado = "Falso"}
